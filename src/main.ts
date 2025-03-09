@@ -36,6 +36,7 @@ app.listen(envs.port,()=>{
     console.log('listening on port', envs.port);
 })
 
+
 httpServer.listen({port: envs.apollo_server_port},()=>{
     console.log('apollo server running on ' + envs.apollo_server_port)
 })

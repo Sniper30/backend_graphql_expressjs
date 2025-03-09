@@ -2,4 +2,5 @@
  type Query {
     getUsers: [User]
     getPosts: [Post]
+    login (email: String, password:String): User
   }

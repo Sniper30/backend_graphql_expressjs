@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import { userLogin } from "../schemas/user.schema.js";
 import { IUser } from "../../../interfaces/user.interface.js";
-import {genSalt, hash} from "bcrypt";
+import {genSalt, hash,compare} from "bcrypt";
+import ExeptionHandler from "../../../config/exeptions.js";
 export const User = mongoose.model('user',userLogin);
 
 
@@ -18,6 +19,21 @@ export const seriviceUsers = {
         return await user.save();
     },
     
-    findUsers: async ()=> await User.find()
+    findUsers: async ()=> await User.find(),
+
+    login: async (email: string, password: string)=>{
+        try {
+            const _user:IUser = await User.findOne({email}).exec() as IUser;
+            if (!_user) throw new ExeptionHandler("invalid email").badRequest()
+
+            const validatePassword = await compare(password,_user.password);
+            if(!validatePassword) throw new ExeptionHandler("Wrong password").unauthorized();
+            return  _user 
+
+        } catch (error) {
+            console.log(error)
+        }
+        
+    }
 }
 
