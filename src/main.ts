@@ -1,5 +1,5 @@
 
-import { port } from "./config/envs.js";
+import { envs } from "./config/envs.js";
 import http from "http";
 import {expressMiddleware} from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
@@ -23,6 +23,7 @@ const apolloServer = new ApolloServer({
     schema: buildSubgraphSchema({ typeDefs, resolvers })
 })
 await apolloServer.start();
+
 app.use(
     '/graphql',
     cors(),
@@ -31,11 +32,11 @@ app.use(
     context: async({req}) => ({token: req.headers.token})
     }),
 );
-app.listen(port,()=>{
-    console.log('listening on port', port);
+app.listen(envs.port,()=>{
+    console.log('listening on port', envs.port);
 })
 
-httpServer.listen({port: 8001},()=>{
-    console.log('apollo server running on ' + 8001)
+httpServer.listen({port: envs.apollo_server_port},()=>{
+    console.log('apollo server running on ' + envs.apollo_server_port)
 })
 

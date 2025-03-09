@@ -6,6 +6,3 @@ export const userLogin = new Schema({
     name: String,
     phone: String
 });
-
-
-

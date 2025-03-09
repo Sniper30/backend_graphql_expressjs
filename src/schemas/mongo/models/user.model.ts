@@ -17,6 +17,7 @@ export const seriviceUsers = {
         user.name = rest.name;
         return await user.save();
     },
+    
     findUsers: async ()=> await User.find()
 }
 

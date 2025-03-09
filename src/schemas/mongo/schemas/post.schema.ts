@@ -10,6 +10,5 @@ const schema = new Schema({
         likes: [Schema.ObjectId]
     }
 })
-
 export const postSchema = schema;
    

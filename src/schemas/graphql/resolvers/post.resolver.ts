@@ -4,6 +4,7 @@ import { servicePosts } from "../../mongo/models/post.model.js";
 
 
 export const resolvers = {
+    
     Query:{
         getPosts: async()=> await servicePosts.getPosts()
     },

@@ -1,4 +1,5 @@
 import {connect} from "mongoose";
+import { envs } from "../../config/envs.js";
 
 
 class MongoDbWithMongoose{
@@ -10,9 +11,10 @@ class MongoDbWithMongoose{
         MongoDbWithMongoose._instance = this;
         this.connectMongoose();
     }
+    
     async connectMongoose(){
         MongoDbWithMongoose.num++
-       await connect("mongodb+srv://jprafael348:yMOBE2e0PN5kOIWg@gropho-cluster.srx3w.mongodb.net/")
+       await connect(envs.database_url)
         .then(()=> console.log('mongodb connected'))
         .catch(error => console.log('mongodb error: ', error))
     }
