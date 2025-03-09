@@ -1,0 +1,4 @@
+type Mutation {
+    addUser(email:String, password: String, name: String, phone: String): User
+    addPost(comment: String, picture: String, userId: ID!): Post
+  }
