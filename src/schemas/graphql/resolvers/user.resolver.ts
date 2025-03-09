@@ -4,10 +4,9 @@ import { seriviceUsers } from "../../mongo/models/user.model.js";
 
 export const resolvers = {
     Query:{
-        getUsers:()=> seriviceUsers.findUser()
+        getUsers:()=> seriviceUsers.findUsers()
     },
-
     Mutation:{
-        addUser: async (root: any, user: IUser)=> await seriviceUsers.saveUsers(user)
+        addUser: async (root: any, user: IUser)=> await seriviceUsers.saveUser(user)
     }
 }

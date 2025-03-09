@@ -8,7 +8,7 @@ const files = [
 let schemas = "";
 for (let i = 0; i < files.length; i++) {
     let str = readFileSync(files[i]).toString('utf-8').trim();
-    schemas += str;
+    schemas += str + "\n";
 }
 export default schemas;
 //# sourceMappingURL=index.js.map

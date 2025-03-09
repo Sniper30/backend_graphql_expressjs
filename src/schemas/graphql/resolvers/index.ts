@@ -17,5 +17,5 @@ resolvers.forEach(resolver =>{
     mix["Query"] = Object.assign(mix["Query"] || {}, propsQuery);
     mix["Mutation"] = Object.assign(mix["Mutation"] || {}, propsMutation);
 });
-
+console.log(mix)
 export default mix as unknown as GraphQLResolverMap<unknown>

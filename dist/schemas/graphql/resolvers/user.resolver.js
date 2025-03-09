@@ -1,10 +1,10 @@
 import { seriviceUsers } from "../../mongo/models/user.model.js";
 export const resolvers = {
     Query: {
-        getUsers: () => seriviceUsers.findUser()
+        getUsers: () => seriviceUsers.findUsers()
     },
     Mutation: {
-        addUser: async (root, user) => await seriviceUsers.saveUsers(user)
+        addUser: async (root, user) => await seriviceUsers.saveUser(user)
     }
 };
 //# sourceMappingURL=user.resolver.js.map
