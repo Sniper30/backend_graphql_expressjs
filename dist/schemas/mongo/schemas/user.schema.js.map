@@ -1,1 +1,0 @@
-{"version":3,"file":"user.schema.js","sourceRoot":"","sources":["../../../../src/schemas/mongo/schemas/user.schema.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,UAAU,CAAC;AAElC,MAAM,CAAC,MAAM,SAAS,GAAG,IAAI,MAAM,CAAC;IAChC,KAAK,EAAE,MAAM;IACb,QAAQ,EAAE,MAAM;IAChB,IAAI,EAAE,MAAM;IACZ,KAAK,EAAE,MAAM;CAChB,CAAC,CAAC"}
